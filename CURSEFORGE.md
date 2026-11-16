@@ -1,4 +1,4 @@
-# Cobbleverse x Create Reforged + Industries Beta
+# Cobbleverse x Create Reforged (FABRIC)
 
 Play Create and Create Aeronautics inside the COBBLEVERSE modpack, on Fabric 1.21.1, without crashes.
 
