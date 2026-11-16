@@ -20,8 +20,9 @@ I am not affiliated with either of them, nor with Create, Create Aeronautics or 
    - [Create Reforged [Unofficial]](https://www.curseforge.com/minecraft/mc-mods/create-reforged-unofficial)
    - [Create Aeronautics [Unofficial]](https://www.curseforge.com/minecraft/mc-mods/create-aeronautics-unofficial) and its dependency Sable
    - This mod
-3. Put the official Create jar and the official Create Aeronautics jar in the `resourcepacks` folder. The two ports read their textures from those jars; see their pages for details.
-4. Launch the game.
+3. **Disable ScalableLux.** COBBLEVERSE ships `ScalableLux-0.1.0.1+fabric.d0d58ab-all.jar`, and Sable (required by Create Aeronautics) refuses to load with it. In the CurseForge app, open the modpack's mod list and turn ScalableLux off, or rename the file in `mods` so it ends in `.disabled`. If you skip this, the game stops at launch with "Mod 'Sable' is incompatible with any version of mod 'ScalableLux'".
+4. Put the official Create jar and the official Create Aeronautics jar in the `resourcepacks` folder. The two ports read their textures from those jars; see their pages for details.
+5. Launch the game.
 
 ## What it fixes
 
@@ -79,8 +80,9 @@ Juega Create y Create Aeronautics dentro del modpack COBBLEVERSE, en Fabric 1.21
 
 1. Instala el modpack COBBLEVERSE.
 2. Añade a `mods`: Create Reforged [Unofficial], Create Aeronautics [Unofficial] (con su dependencia Sable) y este mod.
-3. Pon el jar oficial de Create y el de Create Aeronautics en `resourcepacks`.
-4. Abre el juego.
+3. **Desactiva ScalableLux.** COBBLEVERSE trae `ScalableLux-0.1.0.1+fabric.d0d58ab-all.jar` y Sable (necesario para Create Aeronautics) no carga con él. Desactívalo en la lista de mods del modpack en la app de CurseForge, o renombra el archivo en `mods` para que termine en `.disabled`. Si no lo haces, el juego se detiene al abrir con el mensaje "Mod 'Sable' is incompatible with any version of mod 'ScalableLux'".
+4. Pon el jar oficial de Create y el de Create Aeronautics en `resourcepacks`.
+5. Abre el juego.
 
 ## Qué arregla
 

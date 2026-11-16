@@ -12,6 +12,9 @@ Cobblemon addons.
 
 The full player-facing description (requirements, fixes, credits) is in **[CURSEFORGE.md](CURSEFORGE.md)**.
 
+**Important:** disable `ScalableLux` (shipped with COBBLEVERSE) before launching. Sable, required by Create Aeronautics
+Reforged, is incompatible with it and the game will refuse to start.
+
 ## What's in this repository
 
 ```
