@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/brass"
+    },
+    {
+      "item": "createmonballsoverhaul:rubber_stamp_lid"
+    }
+  ],
+  "keepHeldItem": true,
+  "results": [
+    {
+      "id": "createmonballsoverhaul:stamped_brass_nugget_lid"
+    }
+  ]
+}

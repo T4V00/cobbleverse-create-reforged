@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "cobblemon:sitrus_berry"
+    },
+    {
+      "amount": 81000,
+      "fluid": "create_cobblemon_potion:medicinal_brew_source"
+    }
+  ],
+  "results": [
+    {
+      "amount": 81000,
+      "fluid": "create_cobblemon_potion:hyper_potion_source"
+    }
+  ]
+}

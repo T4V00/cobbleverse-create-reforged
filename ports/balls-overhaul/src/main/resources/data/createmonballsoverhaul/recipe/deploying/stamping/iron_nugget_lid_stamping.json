@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/iron"
+    },
+    {
+      "item": "createmonballsoverhaul:rubber_stamp_lid"
+    }
+  ],
+  "keepHeldItem": true,
+  "results": [
+    {
+      "id": "createmonballsoverhaul:stamped_iron_nugget_lid"
+    }
+  ]
+}

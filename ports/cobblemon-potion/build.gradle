@@ -1,0 +1,2 @@
+version = '1.0.1+fabricport'
+base { archivesName = 'create_cobblemon_potion-fabric' }

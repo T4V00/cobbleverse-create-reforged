@@ -1,0 +1,75 @@
+{
+  "itemGroup.create_cobblemon_potion": "宝可梦动力药水",
+  "block.create_cobblemon_potion.test_block": "测试方块",
+  "item.create_cobblemon_potion.test_block_item": "测试方块",
+
+  "fluid_type.create_cobblemon_potion.medicinal_brew_fluidtype": "药酿液体",
+  "fluid.create_cobblemon_potion.medicinal_brew_source": "药酿",
+  "item.create_cobblemon_potion.medicinal_brew_bucket": "一桶药酿",
+
+  "fluid_type.create_cobblemon_potion.potion_fluidtype": "伤药液体",
+  "fluid.create_cobblemon_potion.potion_source": "伤药",
+  "item.create_cobblemon_potion.potion_bucket": "一桶伤药",
+
+  "fluid_type.create_cobblemon_potion.super_potion_fluidtype": "好伤药液体",
+  "fluid.create_cobblemon_potion.super_potion_source": "好伤药",
+  "item.create_cobblemon_potion.super_potion_bucket": "一桶好伤药",
+
+  "fluid_type.create_cobblemon_potion.hyper_potion_fluidtype": "厉害伤药液体",
+  "fluid.create_cobblemon_potion.hyper_potion_source": "厉害伤药",
+  "item.create_cobblemon_potion.hyper_potion_bucket": "一桶厉害伤药",
+
+
+  "fluid_type.create_cobblemon_potion.max_potion_fluidtype": "全满药液体",
+  "fluid.create_cobblemon_potion.max_potion_source": "全满药",
+  "item.create_cobblemon_potion.max_potion_bucket": "一桶全满药",
+
+  "fluid_type.create_cobblemon_potion.full_restore_fluidtype": "全复药液体",
+  "fluid.create_cobblemon_potion.full_restore_source": "全复药",
+  "item.create_cobblemon_potion.full_restore_bucket": "一桶全复药",
+
+  "fluid_type.create_cobblemon_potion.ether_fluidtype": "PP单项小补剂液体",
+  "fluid.create_cobblemon_potion.ether_source": "PP单项小补剂",
+  "item.create_cobblemon_potion.ether_bucket": "一桶PP单项小补剂",
+
+  "fluid_type.create_cobblemon_potion.max_ether_fluidtype": "PP单项全补剂液体",
+  "fluid.create_cobblemon_potion.max_ether_source": "PP单项全补剂",
+  "item.create_cobblemon_potion.max_ether_bucket": "一桶PP单项全补剂",
+
+  "fluid_type.create_cobblemon_potion.elixir_fluidtype": "PP多项小补剂液体",
+  "fluid.create_cobblemon_potion.elixir_source": "PP多项小补剂",
+  "item.create_cobblemon_potion.elixir_bucket": "一桶PP多项小补剂",
+
+  "fluid_type.create_cobblemon_potion.max_elixir_fluidtype": "PP多项全补剂液体",
+  "fluid.create_cobblemon_potion.max_elixir_source": "PP多项全补剂",
+  "item.create_cobblemon_potion.max_elixir_bucket": "一桶PP多项全补剂",
+
+  "fluid_type.create_cobblemon_potion.antidote_fluidtype": "解毒药液体",
+  "fluid.create_cobblemon_potion.antidote_source": "解毒药",
+  "item.create_cobblemon_potion.antidote_bucket": "一桶解毒药",
+
+
+  "fluid_type.create_cobblemon_potion.awakening_fluidtype": "解眠药液体",
+  "fluid.create_cobblemon_potion.awakening_source": "解眠药",
+  "item.create_cobblemon_potion.awakening_bucket": "一桶解眠药",
+
+
+  "fluid_type.create_cobblemon_potion.burn_heal_fluidtype": "灼伤药液体",
+  "fluid.create_cobblemon_potion.burn_heal_source": "灼伤药",
+  "item.create_cobblemon_potion.burn_heal_bucket": "一桶灼伤药",
+
+
+  "fluid_type.create_cobblemon_potion.ice_heal_fluidtype": "解冻药液体",
+  "fluid.create_cobblemon_potion.ice_heal_source": "解冻药",
+  "item.create_cobblemon_potion.ice_heal_bucket": "一桶解冻药",
+
+
+  "fluid_type.create_cobblemon_potion.paralyze_heal_fluidtype": "解麻药液体",
+  "fluid.create_cobblemon_potion.paralyze_heal_source": "解麻药",
+  "item.create_cobblemon_potion.paralyze_heal_bucket": "一桶解麻药",
+
+
+  "fluid_type.create_cobblemon_potion.full_heal_fluidtype": "万灵药液体",
+  "fluid.create_cobblemon_potion.full_heal_source": "万灵药",
+  "item.create_cobblemon_potion.full_heal_bucket": "一桶万灵药"
+}

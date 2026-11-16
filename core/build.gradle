@@ -1,0 +1,8 @@
+version = '1.0.0-beta'
+base { archivesName = 'cobbleverse-create-reforged' }
+// The ports are shipped inside the final jar (jar-in-jar).
+dependencies {
+    ['threaded-trains', 'cobblestone', 'balls-overhaul', 'cobblemon-potion', 'goggles-accessories'].each {
+        include project(":$it")
+    }
+}

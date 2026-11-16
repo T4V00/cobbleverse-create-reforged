@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "create_cobblemon_potion",
+  "version": "1.0.1+fabricport",
+  "name": "Create Cobblemon Potion (Fabric port)",
+  "description": "Cobblemon medicine as Create fluids. Unofficial local Fabric port for Create Reforged.",
+  "authors": ["Junto"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.junto.create_cobblemon_potion.fabric.CreateCobblemonPotionFabric"],
+    "client": ["com.junto.create_cobblemon_potion.fabric.CreateCobblemonPotionClient"]
+  },
+  "depends": { "minecraft": "1.21.1", "fabricloader": ">=0.16.0", "fabric-api": "*", "create": ">=6.0.10", "cobblemon": "*" }
+}

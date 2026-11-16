@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "createmonballsoverhaul",
+  "version": "0.0.4+fabricport",
+  "name": "Create: Cobblemon Balls Overhaul (Fabric port)",
+  "description": "Create-based crafting chains for Cobblemon balls. Unofficial local Fabric port for Create Reforged.",
+  "authors": ["xKcinnay"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["net.xkcinnay.createmonballsoverhaul.CreateCobblemonBallsOverhaul"],
+    "client": ["net.xkcinnay.createmonballsoverhaul.client.CreateCobblemonBallsOverhaulClient"]
+  },
+  "depends": { "minecraft": "1.21.1", "fabricloader": ">=0.16.0", "fabric-api": "*", "create": ">=6.0.10", "cobblemon": "*" }
+}

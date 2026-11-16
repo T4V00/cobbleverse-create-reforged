@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "createmonballsoverhaul:blue_ball_lid"
+    },
+    {
+      "amount": 16200,
+      "fluid": "createmonballsoverhaul:source_light_tumblestone_coating"
+    }
+  ],
+  "results": [
+    {
+      "id": "createmonballsoverhaul:light_coated_blue_ball_lid"
+    }
+  ]
+}

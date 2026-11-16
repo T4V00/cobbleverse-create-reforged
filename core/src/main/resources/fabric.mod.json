@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "cobbleverse_create_reforged",
+  "version": "1.0.0-beta",
+  "name": "Cobbleverse x Create Reforged + Industries Beta",
+  "description": "Makes Create Reforged and Create Aeronautics Reforged work with the COBBLEVERSE modpack: fixes the Porting Lib conflict that froze loading, the Pokemon spawn kick, and the Aeronautics startup crash. Bundles Fabric ports of Create Threaded Trains, Create Cobblestone, Create: Cobblemon Balls Overhaul, Create Cobblemon Potion and an Accessories slot for the Aviator's Goggles. Unofficial fan project, not affiliated with Create, Create Reforged, Cobblemon or COBBLEVERSE.",
+  "authors": [
+    "Cobbleverse x Create Reforged project"
+  ],
+  "contributors": [
+    "Ported mods by: MrJulsen (Create Threaded Trains, GPL-3.0), MrStickyPiston (Create Cobblestone, CC0-1.0), xKcinnay (Create: Cobblemon Balls Overhaul, MIT), Junto (Create Cobblemon Potion, MIT); goggles idea from titammods (Create Aeronautics Curios Compat)"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "mixins": [
+    "cobbleverse_create_reforged.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "1.21.1",
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "create": ">=6.0.10",
+    "cobblemon": "*"
+  },
+  "recommends": {
+    "aeronautics": "*"
+  },
+  "jars": [],
+  "contact": {
+    "sources": "https://github.com/T4V00/cobbleverse-create-reforged",
+    "issues": "https://github.com/T4V00/cobbleverse-create-reforged/issues"
+  }
+}

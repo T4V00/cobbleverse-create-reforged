@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "cobblemon:oran_berry"
+    },
+    {
+      "amount": 81000,
+      "fluid": "create_cobblemon_potion:medicinal_brew_source"
+    }
+  ],
+  "results": [
+    {
+      "amount": 81000,
+      "fluid": "create_cobblemon_potion:potion_source"
+    }
+  ]
+}

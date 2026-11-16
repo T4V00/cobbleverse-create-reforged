@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "aeronautics_curios_compat",
+  "version": "1.0+fabricport",
+  "name": "Create Aeronautics Accessories Compat (Fabric port)",
+  "description": "Wear the Aviator's Goggles in an Accessories (Curios/Trinkets) head slot. Unofficial local Fabric port of Create Aeronautics Curios Compat.",
+  "authors": ["titammods"],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.titammods.aeronautics_curios_compat.AeronauticsCuriosCompat"],
+    "client": ["com.titammods.aeronautics_curios_compat.client.AeronauticsCuriosCompatClient"]
+  },
+  "depends": { "minecraft": "1.21.1", "fabricloader": ">=0.16.0", "fabric-api": "*", "create": ">=6.0.10", "aeronautics": "*", "accessories": "*" }
+}

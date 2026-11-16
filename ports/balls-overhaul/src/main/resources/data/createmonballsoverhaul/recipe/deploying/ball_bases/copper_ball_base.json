@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/copper"
+    },
+    {
+      "item": "createmonballsoverhaul:apricorn_punch"
+    }
+  ],
+  "keepHeldItem": true,
+  "results": [
+    {
+      "id": "createmonballsoverhaul:copper_ball_base"
+    }
+  ]
+}

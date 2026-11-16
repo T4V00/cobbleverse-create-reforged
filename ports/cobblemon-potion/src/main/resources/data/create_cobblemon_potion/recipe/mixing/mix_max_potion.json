@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "cobblemon:vivichoke"
+    },
+    {
+      "amount": 81000,
+      "fluid": "create_cobblemon_potion:hyper_potion_source"
+    }
+  ],
+  "results": [
+    {
+      "amount": 81000,
+      "fluid": "create_cobblemon_potion:max_potion_source"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:plates/obsidian"
+    },
+    {
+      "item": "createmonballsoverhaul:rubber_stamp_lid"
+    }
+  ],
+  "keepHeldItem": true,
+  "results": [
+    {
+      "id": "createmonballsoverhaul:stamped_sturdy_sheet_lid"
+    }
+  ]
+}

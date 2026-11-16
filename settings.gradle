@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'cobbleverse-create-reforged'
+include 'core'
+['threaded-trains', 'cobblestone', 'balls-overhaul', 'cobblemon-potion', 'goggles-accessories'].each {
+    include it
+    project(":$it").projectDir = file("ports/$it")
+}

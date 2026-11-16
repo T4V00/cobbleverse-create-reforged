@@ -1,0 +1,21 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version '1.16.3' apply false
+}
+subprojects {
+    apply plugin: 'net.fabricmc.fabric-loom-remap'
+    java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
+    tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 21 }
+    repositories { mavenCentral() }
+    // Create Reforged, Aeronautics Reforged, Cobblemon, Accessories... are not on a public Maven: see libs/README.md
+    def libs = rootProject.file('libs')
+    dependencies {
+        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+        mappings loom.officialMojangMappings()
+        modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+        modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+        modCompileOnly fileTree(dir: libs, include: ['*.jar'])
+        modCompileOnly fileTree(dir: libs, include: ['nested_*/META-INF/jars/*.jar'],
+            exclude: ['**/fabric-api-base*', '**/fabric-block-view*', '**/fabric-key-binding*', '**/fabric-language-kotlin*',
+                      '**/fabric-renderer-api*', '**/fabric-rendering-*', '**/fabric-resource-loader*', '**/kotlin*', '**/atomicfu*', '**/owo-sentinel*'])
+    }
+}

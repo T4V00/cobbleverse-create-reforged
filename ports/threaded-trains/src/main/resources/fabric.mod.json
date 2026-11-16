@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "createthreadedtrains",
+  "version": "1.0.0+fabricport",
+  "name": "Create: Threaded Trains (Fabric port)",
+  "description": "Offloads the railway network ticks to a separate thread. Unofficial local Fabric port for Create Reforged.",
+  "authors": ["MrJulsen"],
+  "license": "GPL-3.0",
+  "icon": "ctt_icon.png",
+  "environment": "*",
+  "entrypoints": { "main": ["de.mrjulsen.ctt.fabric.CreateThreadedTrainsFabric"] },
+  "mixins": ["createthreadedtrains.mixins.json"],
+  "depends": { "minecraft": "1.21.1", "fabricloader": ">=0.16.0", "create": ">=6.0.10" }
+}

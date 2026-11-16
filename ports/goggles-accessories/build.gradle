@@ -1,0 +1,2 @@
+version = '1.0+fabricport'
+base { archivesName = 'createaeronauticscurios-fabric' }

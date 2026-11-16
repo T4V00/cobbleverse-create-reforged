@@ -1,0 +1,10 @@
+libs/*
+!libs/README.md
+build/
+.gradle/
+*/build/
+ports/*/build/
+run/
+.idea/
+*.iml
+out/

@@ -1,0 +1,3 @@
+version = '1.0.0+fabricport'
+base { archivesName = 'createthreadedtrains-fabric' }
+loom { mixin { defaultRefmapName = 'createthreadedtrains-refmap.json' } }

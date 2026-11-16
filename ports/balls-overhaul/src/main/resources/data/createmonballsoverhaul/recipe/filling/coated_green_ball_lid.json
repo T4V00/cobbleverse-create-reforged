@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "createmonballsoverhaul:green_ball_lid"
+    },
+    {
+      "amount": 16200,
+      "fluid": "createmonballsoverhaul:source_standard_tumblestone_coating"
+    }
+  ],
+  "results": [
+    {
+      "id": "createmonballsoverhaul:coated_green_ball_lid"
+    }
+  ]
+}

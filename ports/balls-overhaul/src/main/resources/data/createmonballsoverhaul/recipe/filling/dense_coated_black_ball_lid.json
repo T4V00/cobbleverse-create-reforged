@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "createmonballsoverhaul:black_ball_lid"
+    },
+    {
+      "amount": 16200,
+      "fluid": "createmonballsoverhaul:source_dense_tumblestone_coating"
+    }
+  ],
+  "results": [
+    {
+      "id": "createmonballsoverhaul:dense_coated_black_ball_lid"
+    }
+  ]
+}

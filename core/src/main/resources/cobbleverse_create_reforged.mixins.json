@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.cobbleverse.createreforged.mixin",
+  "plugin": "dev.cobbleverse.createreforged.core.CvcrMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["TransformationFixMixin", "PokemonEntityFixMixin"],
+  "injectors": { "defaultRequire": 1 }
+}
