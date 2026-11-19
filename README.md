@@ -22,6 +22,7 @@ core/                     The mod itself: compatibility fixes + jar-in-jar of th
   ...mixin/TransformationFixMixin.java   Porting Lib vs porting_lib_ufo "Conflicting default methods" fix
   ...mixin/PokemonEntityFixMixin.java    Pokemon spawn NPE (player kicked by Neruina) fix
   ...core/RedirectAtFixExtension.java    Repairs Aeronautics Reforged's malformed @Redirect annotations in memory
+  ...rei/                                REI plugin: every Create recipe type + sequenced assembly (Reforged only ships JEI)
 ports/                    Fabric ports, each keeps its original license (THIRD_PARTY_NOTICES.md)
 tools/                    Scripts used for the ports (NeoForge->Fabric source helper, Create recipe converter, jar tools)
 ```
@@ -36,7 +37,7 @@ tools/                    Scripts used for the ports (NeoForge->Fabric source he
 ./gradlew :core:build
 ```
 
-The finished mod is `core/build/libs/cobbleverse-create-reforged-1.0.0-beta.jar` (the ports are nested inside it).
+The finished mod is `core/build/libs/cobbleverse-create-reforged-1.1.0-beta.jar` (the ports are nested inside it).
 
 ## Tools
 

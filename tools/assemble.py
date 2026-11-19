@@ -12,7 +12,7 @@ with zipfile.ZipFile(core) as zin, zipfile.ZipFile(out + '.tmp', 'w', zipfile.ZI
             meta = json.loads(data)
             continue
         zout.writestr(item, data)
-    meta['jars'] = []
+    meta['jars'] = meta.get('jars', [])
     for n in nested:
         name = 'META-INF/jars/' + os.path.basename(n)
         with zipfile.ZipFile(n) as z:
