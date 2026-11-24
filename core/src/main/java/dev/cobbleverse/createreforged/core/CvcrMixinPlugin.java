@@ -7,11 +7,11 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-/** Registers the annotation fixer as soon as mixin configs load, and only applies fixes whose target mod is present. */
+/** Registers the annotation conversion (if this loader needs it) when mixin configs load, and only applies fixes whose target mod is present. */
 public class CvcrMixinPlugin implements IMixinConfigPlugin {
    @Override
    public void onLoad(String mixinPackage) {
-      RedirectAtFixExtension.register();
+      RedirectAtFixExtension.registerIfNeeded();
    }
 
    @Override

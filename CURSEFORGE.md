@@ -32,7 +32,7 @@ I am not affiliated with either of them, nor with Create, Create Aeronautics or 
 |---|---|---|
 | The game freezes on the loading screen and all resource packs get disabled | Porting Lib (inside Sophisticated Backpacks and Storage) and porting_lib_ufo (inside Create Reforged) add the same methods to Minecraft's `Transformation` class, and Java refuses to run them | Provides one shared implementation of those methods, so both libraries work |
 | You are kicked from your world a few seconds after joining ("ticking exception on your player") | porting_lib_ufo asks every entity for its size while the entity is still being created; Cobblemon's Pokemon are not ready at that point and crash on every spawn | Gives Pokemon a safe default size until they finish loading |
-| Create Aeronautics Reforged crashes at startup (`ClassCastException: ArrayList cannot be cast to AnnotationNode`) | It is built against a newer Mixin annotation format that the MixinExtras 0.5.0 in older Fabric Loaders (such as 0.18.4) cannot read. This is not a bug in Aeronautics, and Fabric Loader 0.19.5 (COBBLEVERSE 1.8.0) reads it without help | On older loaders, converts those annotations in memory to the older format. The Aeronautics jar is not modified |
+| Create Aeronautics Reforged crashes at startup (`ClassCastException: ArrayList cannot be cast to AnnotationNode`) | It is built against a newer Mixin annotation format that the MixinExtras in older Fabric Loaders (tested: 0.18.4 and 0.19.2) cannot read. This is not a bug in Aeronautics, and Fabric Loader 0.19.5 (COBBLEVERSE 1.8.0) reads it without help | On older loaders, converts those annotations in memory to the older format. The Aeronautics jar is not modified |
 | REI shows no Create machine recipes (pressing, deploying, mixing, sequenced assembly...), so Poke Ball lids, bases and mechanisms look impossible to craft | Create Reforged only ships a JEI plugin, and COBBLEVERSE uses REI | Adds a REI plugin with 13 machine recipe categories plus sequenced assembly, with the machines as workstations, chance outputs, heat requirements and a step-by-step view of sequenced assembly |
 
 ## Included content
@@ -67,6 +67,7 @@ These mods cannot be bundled because their licenses do not allow redistribution,
 
 | Version | Changes |
 |---|---|
+| 1.1.1-beta | The annotation conversion for Aeronautics now runs only on loaders that need it, instead of touching every mod on every loader. Corrected the wording in the log and the mod description |
 | 1.1.0-beta | REI support for Create machine recipes (Create Reforged only had a JEI plugin), including those of the bundled ports. Not shown yet: mechanical crafting, fan smoking/blasting, block cutting and the automatic crafting/brewing categories |
 | 1.0.0-beta | First release: Porting Lib conflict fix, Pokemon spawn kick fix, Aeronautics startup crash fix, 5 bundled ports |
 
@@ -100,7 +101,7 @@ Juega Create y Create Aeronautics dentro del modpack COBBLEVERSE, en Fabric 1.21
 
 - El congelamiento en la pantalla de carga causado por dos copias de Porting Lib.
 - La expulsión del mundo cuando aparecen Pokémon.
-- El crash de Create Aeronautics Reforged al arrancar con versiones antiguas de Fabric Loader (como la 0.18.4), sin modificar su jar. No es un error de Aeronautics.
+- El crash de Create Aeronautics Reforged al arrancar con versiones antiguas de Fabric Loader (probado: 0.18.4 y 0.19.2), sin modificar su jar. No es un error de Aeronautics.
 - REI no mostraba ninguna receta de máquinas de Create (prensa, deployer, mezcla, ensamblaje secuenciado...), porque Create Reforged solo trae plugin para JEI. Ahora el mod añade esas recetas a REI, incluidas las tapas, bases y mecanismos de las Poké Balls.
 
 ## Qué incluye

@@ -17,9 +17,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  * REI integration for Create Reforged. Create Reforged only ships a JEI plugin, so with REI (as in COBBLEVERSE)
- * none of Create's machine recipes were visible. This registers one REI category per Create recipe type plus
- * sequenced assembly, with the machines as workstations, so "uses"/"recipes" lookups work for every Create recipe,
- * including the ones added by the bundled ports.
+ * none of Create's machine recipes were visible. This registers 13 machine categories (see ProcessingKind) plus
+ * sequenced assembly, with the machines as workstations, including the recipes added by the bundled ports. Mechanical
+ * crafting, fan smoking/blasting, block cutting and the automatic crafting/brewing categories are not shown yet.
  */
 public class CvcrReiPlugin implements REIClientPlugin {
    private static final Logger LOGGER = LoggerFactory.getLogger("Cobbleverse x Create Reforged");

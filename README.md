@@ -23,7 +23,7 @@ Reforged, is incompatible with it and the game will refuse to start.
 core/                     The mod itself: compatibility fixes + jar-in-jar of the ports
   ...mixin/TransformationFixMixin.java   Porting Lib vs porting_lib_ufo "Conflicting default methods" fix
   ...mixin/PokemonEntityFixMixin.java    Pokemon spawn NPE (player kicked by Neruina) fix
-  ...core/RedirectAtFixExtension.java    Lets older Fabric Loaders (MixinExtras 0.5.0) read mixins built with the newer annotation format
+  ...core/RedirectAtFixExtension.java    Lets older Fabric Loaders (MixinExtras 0.5.0 to 0.5.4) read mixins built with the newer annotation format
   ...rei/                                REI plugin: 13 Create machine categories + sequenced assembly (Reforged only ships JEI)
 ports/                    Fabric ports, each keeps its original license (THIRD_PARTY_NOTICES.md)
 tools/                    Scripts used for the ports (NeoForge->Fabric source helper, Create recipe converter, jar tools)
@@ -39,7 +39,7 @@ tools/                    Scripts used for the ports (NeoForge->Fabric source he
 ./gradlew :core:build
 ```
 
-The finished mod is `core/build/libs/cobbleverse-create-reforged-1.1.0-beta.jar` (the ports are nested inside it).
+The finished mod is `core/build/libs/cobbleverse-create-reforged-1.1.1-beta.jar` (the ports are nested inside it).
 
 ## Tools
 

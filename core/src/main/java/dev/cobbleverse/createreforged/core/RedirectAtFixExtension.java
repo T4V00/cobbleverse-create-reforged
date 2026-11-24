@@ -17,10 +17,10 @@ import org.spongepowered.asm.mixin.transformer.ext.IExtension;
 import org.spongepowered.asm.mixin.transformer.ext.ITargetClassContext;
 
 /**
- * Create Aeronautics Reforged ships mixins whose {@code @Redirect} (and similar) annotations store {@code at} as a
- * one-element array instead of a single {@code @At}. MixinExtras casts that value to AnnotationNode and crashes the
- * game at startup (ClassCastException: ArrayList cannot be cast to AnnotationNode). This extension runs before
- * MixinExtras' own transformer and rewrites those values in memory; the original jar is left untouched.
+ * Newer Fabric Mixin versions compile the {@code at} of {@code @Redirect} (and similar) as an array. That is valid, but
+ * MixinExtras 0.5.0 and 0.5.4 (Fabric Loader 0.18.4 and 0.19.2) cast it to a single AnnotationNode, so mods built that
+ * way, such as Create Aeronautics Reforged, crash the game at startup. MixinExtras 0.5.5 (Loader 0.19.5) reads it. On those loaders only (see {@link MixinExtrasProbe})
+ * this extension runs before MixinExtras and converts the values in memory; the original jars are left untouched.
  */
 public class RedirectAtFixExtension implements IExtension {
    private static final Logger LOGGER = LoggerFactory.getLogger("Cobbleverse x Create Reforged");
@@ -32,8 +32,14 @@ public class RedirectAtFixExtension implements IExtension {
    private final Set<ClassNode> done = Collections.newSetFromMap(new WeakHashMap<>());
    private int fixed;
 
-   public static void register() {
-      MixinInternals.registerExtension(new RedirectAtFixExtension(), true);
+   /** Registers the conversion only when the running MixinExtras needs it. */
+   public static void registerIfNeeded() {
+      if (MixinExtrasProbe.cannotReadArrayAt()) {
+         LOGGER.info("This MixinExtras cannot read array-style 'at' annotations, enabling in-memory conversion");
+         MixinInternals.registerExtension(new RedirectAtFixExtension(), true);
+      } else {
+         LOGGER.info("This MixinExtras reads array-style 'at' annotations, conversion not needed");
+      }
    }
 
    @Override
@@ -61,7 +67,7 @@ public class RedirectAtFixExtension implements IExtension {
             if ("at".equals(a.values.get(i)) && a.values.get(i + 1) instanceof List<?> list && list.size() == 1) {
                a.values.set(i + 1, list.get(0));
                if (this.fixed++ == 0) {
-                  LOGGER.info("Fixing malformed mixin annotations (first: {}.{})", owner.name, method.name);
+                  LOGGER.info("Converting array-style mixin annotations (first: {}.{})", owner.name, method.name);
                }
             }
          }
