@@ -12,6 +12,8 @@ Cobblemon addons.
 
 The full player-facing description (requirements, fixes, credits) is in **[CURSEFORGE.md](CURSEFORGE.md)**.
 
+**Tested and working with COBBLEVERSE 1.8.0** (Cobblemon 1.8.4, Fabric Loader 0.19.5).
+
 **Important:** disable `ScalableLux` (shipped with COBBLEVERSE) before launching. Sable, required by Create Aeronautics
 Reforged, is incompatible with it and the game will refuse to start.
 
@@ -21,8 +23,8 @@ Reforged, is incompatible with it and the game will refuse to start.
 core/                     The mod itself: compatibility fixes + jar-in-jar of the ports
   ...mixin/TransformationFixMixin.java   Porting Lib vs porting_lib_ufo "Conflicting default methods" fix
   ...mixin/PokemonEntityFixMixin.java    Pokemon spawn NPE (player kicked by Neruina) fix
-  ...core/RedirectAtFixExtension.java    Repairs Aeronautics Reforged's malformed @Redirect annotations in memory
-  ...rei/                                REI plugin: every Create recipe type + sequenced assembly (Reforged only ships JEI)
+  ...core/RedirectAtFixExtension.java    Lets older Fabric Loaders (MixinExtras 0.5.0) read mixins built with the newer annotation format
+  ...rei/                                REI plugin: 13 Create machine categories + sequenced assembly (Reforged only ships JEI)
 ports/                    Fabric ports, each keeps its original license (THIRD_PARTY_NOTICES.md)
 tools/                    Scripts used for the ports (NeoForge->Fabric source helper, Create recipe converter, jar tools)
 ```
