@@ -67,6 +67,7 @@ These mods cannot be bundled because their licenses do not allow redistribution,
 
 | Version | Changes |
 |---|---|
+| 1.1.2-beta | Added the missing blockstate files for the fluids of Create Cobblemon Potion and Create: Cobblemon Balls Overhaul. Without them the game logged about 20,700 "missing model" warnings every time resources loaded |
 | 1.1.1-beta | The annotation conversion for Aeronautics now runs only on loaders that need it, instead of touching every mod on every loader. Corrected the wording in the log and the mod description |
 | 1.1.0-beta | REI support for Create machine recipes (Create Reforged only had a JEI plugin), including those of the bundled ports. Not shown yet: mechanical crafting, fan smoking/blasting, block cutting and the automatic crafting/brewing categories |
 | 1.0.0-beta | First release: Porting Lib conflict fix, Pokemon spawn kick fix, Aeronautics startup crash fix, 5 bundled ports |
