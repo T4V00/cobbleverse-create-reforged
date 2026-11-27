@@ -10,7 +10,7 @@ Cobblemon addons.
 > **Not affiliated** with Create, Create Aeronautics, Create Reforged, Create Aeronautics Reforged, Cobblemon or
 > COBBLEVERSE. Not trying to take credit or make money: the only goal is to make Create and Cobblemon work together.
 
-The full player-facing description (requirements, fixes, credits) is in **[CURSEFORGE.md](CURSEFORGE.md)**.
+The full player-facing description (requirements, fixes, credits) is in **[CURSEFORGE.html](CURSEFORGE.html)**, the exact HTML published on CurseForge.
 
 **Tested and working with COBBLEVERSE 1.8.0** (Cobblemon 1.8.4, Fabric Loader 0.19.5).
 

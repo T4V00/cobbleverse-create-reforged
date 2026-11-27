@@ -1,0 +1,195 @@
+<h1 style="text-align: center;">Cobbleverse x Create Reforged (FABRIC)</h1>
+<p style="text-align: center;"><strong>Play Create and Create Aeronautics inside the COBBLEVERSE modpack, on Fabric 1.21.1, without crashes.</strong></p>
+<p style="text-align: center;">Fixes the crashes and freezes &bull; Shows Create recipes in REI &bull; Bundles 5 Create addons ported to Fabric</p>
+<table style="width: 100%; border-collapse: collapse;" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Minecraft</strong><br>1.21.1</td>
+<td style="text-align: center;"><strong>Loader</strong><br>Fabric</td>
+<td style="text-align: center;"><strong>Tested with</strong><br>COBBLEVERSE 1.8.0</td>
+<td style="text-align: center;"><strong>Create Reforged</strong><br>6.0.10.3</td>
+<td style="text-align: center;"><strong>Aeronautics</strong><br>1.3.2-4</td>
+<td style="text-align: center;"><strong>Status</strong><br>Beta</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><a href="#english">English</a> &bull; <a href="#espanol">Espa&ntilde;ol</a> &bull; <a href="https://github.com/T4V00/cobbleverse-create-reforged" target="_blank" rel="noopener">Source code</a> &bull; <a href="https://github.com/T4V00/cobbleverse-create-reforged/issues" target="_blank" rel="noopener">Report a problem</a></p>
+<hr>
+<h2 id="english">Before you start</h2>
+<blockquote>
+<p><strong>Tested and working with COBBLEVERSE 1.8.0</strong> (Cobblemon 1.8.4, Fabric Loader 0.19.5), Create Reforged 6.0.10.3 and Create Aeronautics 1.3.2-4.</p>
+<p><strong>Made with AI.</strong> This mod was built with heavy help from an AI assistant (Claude), so it is "vibe-coded". It was tested in a real COBBLEVERSE world, both single player and LAN, but it is a beta. <strong>Back up your worlds before using it.</strong></p>
+<p><strong>Not affiliated.</strong> This mod is a bridge between two projects that are not mine: the unofficial Fabric ports <strong>Create Reforged</strong> and <strong>Create Aeronautics Reforged</strong> by sanufsoii, and the <strong>COBBLEVERSE</strong> modpack by LUMYVERSE. I am not affiliated with either of them, nor with Create, Create Aeronautics or Cobblemon. I am not trying to take credit from anyone or to make money; the only goal is to make Create and Cobblemon work well together. All credit for Create, Create Aeronautics, the Fabric ports and the modpack belongs to their authors. Please do not report problems with this mod to them; use this project's issue tracker instead.</p>
+</blockquote>
+<h2>Installation</h2>
+<ol>
+<li><strong>Install the modpack.</strong> Get <a href="https://modrinth.com/modpack/cobbleverse" target="_blank" rel="nofollow noopener">COBBLEVERSE</a> (Fabric, Minecraft 1.21.1).</li>
+<li><strong>Add the mods.</strong> Put these in the <code>mods</code> folder:
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/create-reforged-unofficial" target="_blank" rel="nofollow noopener">Create Reforged [Unofficial]</a></li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/create-aeronautics-unofficial" target="_blank" rel="nofollow noopener">Create Aeronautics [Unofficial]</a> and its dependency Sable</li>
+<li>This mod</li>
+</ul>
+</li>
+<li><strong>Disable ScalableLux.</strong> COBBLEVERSE ships <code>ScalableLux-0.1.0.1+fabric.d0d58ab-all.jar</code>, and Sable (required by Create Aeronautics) refuses to load with it. In the CurseForge app, open the modpack's mod list and turn ScalableLux off, or rename the file in <code>mods</code> so it ends in <code>.disabled</code>. If you skip this, the game stops at launch with "Mod 'Sable' is incompatible with any version of mod 'ScalableLux'".</li>
+<li><strong>Add the textures.</strong> Put the official Create jar and the official Create Aeronautics jar in the <code>resourcepacks</code> folder. The two ports read their textures from those jars; see their pages for details.</li>
+<li><strong>Launch the game.</strong></li>
+</ol>
+<hr>
+<h2>What it fixes</h2>
+<h3>1. The game freezes on the loading screen</h3>
+<p><strong>Symptom:</strong> loading never finishes and all resource packs get disabled.<br><strong>Cause:</strong> Porting Lib (inside Sophisticated Backpacks and Storage) and porting_lib_ufo (inside Create Reforged) add the same methods to Minecraft's <code>Transformation</code> class, and Java refuses to run them.<br><strong>Fix:</strong> this mod provides one shared implementation of those methods, so both libraries work.</p>
+<h3>2. You are kicked from your world a few seconds after joining</h3>
+<p><strong>Symptom:</strong> "ticking exception on your player".<br><strong>Cause:</strong> porting_lib_ufo asks every entity for its size while the entity is still being created; Cobblemon's Pokemon are not ready at that point and crash on every spawn.<br><strong>Fix:</strong> Pokemon get a safe default size until they finish loading.</p>
+<h3>3. Create Aeronautics Reforged crashes at startup on older loaders</h3>
+<p><strong>Symptom:</strong> <code>ClassCastException: ArrayList cannot be cast to AnnotationNode</code>.<br><strong>Cause:</strong> Aeronautics is built against a newer Mixin annotation format that the MixinExtras in older Fabric Loaders (tested: 0.18.4 and 0.19.2) cannot read. This is not a bug in Aeronautics, and Fabric Loader 0.19.5 (COBBLEVERSE 1.8.0) reads it without help.<br><strong>Fix:</strong> on older loaders, those annotations are converted in memory to the older format. The Aeronautics jar is not modified.</p>
+<h3>4. REI shows no Create machine recipes</h3>
+<p><strong>Symptom:</strong> Poke Ball lids, bases and mechanisms look impossible to craft.<br><strong>Cause:</strong> Create Reforged only ships a JEI plugin, and COBBLEVERSE uses REI.<br><strong>Fix:</strong> this mod adds a REI plugin for Create machine recipes:</p>
+<p>13 machine categories plus sequenced assembly, with the machines as workstations, chance outputs, heat requirements and a step-by-step view of sequenced assembly. The recipes of the bundled ports are included.</p>
+<table style="width: 100%; border-collapse: collapse;" border="1">
+<tbody>
+<tr>
+<td><strong>Shown</strong></td>
+<td>Crushing, milling, pressing, mixing, compacting (packing), deploying, item application, spout filling, draining, sawing, sandpaper polishing, fan washing, fan haunting, sequenced assembly</td>
+</tr>
+<tr>
+<td><strong>Not shown yet</strong></td>
+<td>Mechanical crafting, fan smoking and blasting, block cutting, automatic crafting and brewing</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Included content</h2>
+<p>Fabric ports of NeoForge addons, adapted to Create Reforged. Each one keeps its original license and credit:</p>
+<table style="width: 100%; border-collapse: collapse;" border="1">
+<thead>
+<tr>
+<th>Mod</th>
+<th>What it adds</th>
+<th>Original author</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://modrinth.com/mod/create-threaded-trains" target="_blank" rel="nofollow noopener">Create: Threaded Trains</a></td>
+<td>Runs train logic on its own thread for better performance</td>
+<td>MrJulsen</td>
+<td>GPL-3.0</td>
+</tr>
+<tr>
+<td><a href="https://modrinth.com/mod/create-cobblestone" target="_blank" rel="nofollow noopener">Create Cobblestone</a> (1.5.1)</td>
+<td>Mechanical Generator that makes cobblestone, stone, basalt and more from rotation</td>
+<td>MrStickyPiston</td>
+<td>CC0-1.0</td>
+</tr>
+<tr>
+<td><a href="https://modrinth.com/mod/create-cobblemon-balls-overhaul" target="_blank" rel="nofollow noopener">Create: Cobblemon Balls Overhaul</a></td>
+<td>Create production chains for Poke Balls: lids, mechanisms, tumblestone coatings</td>
+<td>xKcinnay</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><a href="https://modrinth.com/mod/create-cobblemon-potion" target="_blank" rel="nofollow noopener">Create Cobblemon Potion</a></td>
+<td>Cobblemon medicines as Create fluids, with healing pools</td>
+<td>Junto (buggzd)</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td>Aviator's Goggles in an Accessories slot</td>
+<td>Wear the Aeronautics goggles in the head accessory slot; they count as Create goggles. New code, idea from <a href="https://modrinth.com/mod/create-aeronautics-x-curios-api-compat" target="_blank" rel="nofollow noopener">Create Aeronautics x Curios API Compat</a> by titammods</td>
+<td>-</td>
+<td>MIT</td>
+</tr>
+</tbody>
+</table>
+<p>The NeoForge Create recipes of these mods were converted to the format Create Reforged reads (field names, and fluid amounts from mB to droplets).</p>
+<h3>Also compatible with</h3>
+<p>These mods cannot be bundled because their licenses do not allow redistribution, but they can be installed alongside:</p>
+<ul>
+<li><a href="https://modrinth.com/mod/cobblemore-library" target="_blank" rel="nofollow noopener">Cobblemore Library</a> (Fabric). Requires <a href="https://modrinth.com/mod/pommel-held-item-models" target="_blank" rel="nofollow noopener">Pommel</a>.</li>
+<li><a href="https://modrinth.com/mod/cobblemon-create-industries" target="_blank" rel="nofollow noopener">Cobblemon: Create Industries</a>. It has no Fabric 1.21.1 version yet; if its author releases one, it should work with this setup.</li>
+</ul>
+<h3>Not included</h3>
+<table style="width: 100%; border-collapse: collapse;" border="1">
+<thead>
+<tr>
+<th>Mod</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create Better FPS</td>
+<td>It optimizes Create 6's renderer, which Create Reforged does not use</td>
+</tr>
+<tr>
+<td>Create Dynamic Light</td>
+<td>It needs Sodium Dynamic Lights and Sodium Options API, which have not been tested with the Sodium version in COBBLEVERSE</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Changelog</h2>
+<table style="width: 100%; border-collapse: collapse;" border="1">
+<thead>
+<tr>
+<th>Version</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.1.3-beta</strong></td>
+<td>Updated the bundled Create Cobblestone port from 1.4.10 to 1.5.1. The Mechanical Generator gets a configurable break time (breakTime, off by default), an invalid generator type no longer crashes while loading a world, and the block no longer hides the faces of blocks next to it. The two deepslate generator options were removed from the config, as upstream did: deepslate generators now come only from datapacks</td>
+</tr>
+<tr>
+<td><strong>1.1.2-beta</strong></td>
+<td>Added the missing blockstate files for the fluids of Create Cobblemon Potion and Create: Cobblemon Balls Overhaul. Without them the game logged about 20,700 "missing model" warnings every time resources loaded</td>
+</tr>
+<tr>
+<td><strong>1.1.1-beta</strong></td>
+<td>The annotation conversion for Aeronautics now runs only on loaders that need it, instead of touching every mod on every loader. Corrected the wording in the log and the mod description</td>
+</tr>
+<tr>
+<td><strong>1.1.0-beta</strong></td>
+<td>REI support for Create machine recipes (Create Reforged only had a JEI plugin), including those of the bundled ports. Not shown yet: mechanical crafting, fan smoking/blasting, block cutting and the automatic crafting/brewing categories</td>
+</tr>
+<tr>
+<td><strong>1.0.0-beta</strong></td>
+<td>First release: Porting Lib conflict fix, Pokemon spawn kick fix, Aeronautics startup crash fix, 5 bundled ports</td>
+</tr>
+</tbody>
+</table>
+<h2>Source code and license</h2>
+<p>All source code is on <a href="https://github.com/T4V00/cobbleverse-create-reforged" target="_blank" rel="noopener">GitHub</a>. The fixes are under the MIT license; each port keeps the license of the mod it came from. Found a problem? Open an issue on <a href="https://github.com/T4V00/cobbleverse-create-reforged/issues" target="_blank" rel="noopener">GitHub</a> and include your <code>logs/latest.log</code>.</p>
+<hr>
+<h1 id="espanol" style="text-align: center;">Espa&ntilde;ol</h1>
+<p style="text-align: center;"><strong>Juega Create y Create Aeronautics dentro del modpack COBBLEVERSE, en Fabric 1.21.1, sin crasheos.</strong></p>
+<h2>Antes de empezar</h2>
+<blockquote>
+<p><strong>Probado y funcionando con COBBLEVERSE 1.8.0</strong> (Cobblemon 1.8.4, Fabric Loader 0.19.5), Create Reforged 6.0.10.3 y Create Aeronautics 1.3.2-4.</p>
+<p><strong>Hecho con IA.</strong> Este mod se hizo con mucha ayuda de un asistente de IA (Claude). Se prob&oacute; en un mundo real de COBBLEVERSE, en un jugador y en LAN, pero es una beta. <strong>Haz copia de tus mundos antes de usarlo.</strong></p>
+<p><strong>Sin afiliaci&oacute;n.</strong> Este mod une dos proyectos que no son m&iacute;os: los ports no oficiales a Fabric Create Reforged y Create Aeronautics Reforged (de sanufsoii) y el modpack COBBLEVERSE (de LUMYVERSE). No tengo afiliaci&oacute;n con ninguno de ellos, ni con Create, Create Aeronautics o Cobblemon. No busco quitarle m&eacute;rito a nadie ni ganar dinero, solo facilitar que Create y Cobblemon funcionen juntos. Todo el cr&eacute;dito es de sus autores. No reportes problemas de este mod a ellos; usa el apartado de issues de este proyecto.</p>
+</blockquote>
+<h2>Instalaci&oacute;n</h2>
+<ol>
+<li><strong>Instala el modpack</strong> <a href="https://modrinth.com/modpack/cobbleverse" target="_blank" rel="nofollow noopener">COBBLEVERSE</a>.</li>
+<li><strong>A&ntilde;ade a <code>mods</code>:</strong> Create Reforged [Unofficial], Create Aeronautics [Unofficial] (con su dependencia Sable) y este mod.</li>
+<li><strong>Desactiva ScalableLux.</strong> COBBLEVERSE trae <code>ScalableLux-0.1.0.1+fabric.d0d58ab-all.jar</code> y Sable (necesario para Create Aeronautics) no carga con &eacute;l. Desact&iacute;valo en la lista de mods del modpack en la app de CurseForge, o renombra el archivo en <code>mods</code> para que termine en <code>.disabled</code>. Si no lo haces, el juego se detiene al abrir con el mensaje "Mod 'Sable' is incompatible with any version of mod 'ScalableLux'".</li>
+<li><strong>A&ntilde;ade las texturas:</strong> pon el jar oficial de Create y el de Create Aeronautics en <code>resourcepacks</code>.</li>
+<li><strong>Abre el juego.</strong></li>
+</ol>
+<h2>Qu&eacute; arregla</h2>
+<ul>
+<li><strong>El congelamiento en la pantalla de carga</strong> causado por dos copias de Porting Lib.</li>
+<li><strong>La expulsi&oacute;n del mundo</strong> cuando aparecen Pok&eacute;mon.</li>
+<li><strong>El crash de Create Aeronautics Reforged al arrancar</strong> con versiones antiguas de Fabric Loader (probado: 0.18.4 y 0.19.2), sin modificar su jar. No es un error de Aeronautics.</li>
+<li><strong>Recetas de Create en REI.</strong> Create Reforged solo trae plugin para JEI, as&iacute; que REI no mostraba ninguna receta de m&aacute;quinas (prensa, deployer, mezcla, ensamblaje secuenciado...). Ahora se muestran, incluidas las tapas, bases y mecanismos de las Pok&eacute; Balls. Todav&iacute;a no se muestran: crafteo mec&aacute;nico, ahumado y fundido con ventilador, corte de bloques, y crafteo y elaboraci&oacute;n de pociones autom&aacute;ticos.</li>
+</ul>
+<h2>Qu&eacute; incluye</h2>
+<p>Ports a Fabric, con cr&eacute;dito a sus autores: Create Threaded Trains, Create Cobblestone (1.5.1), Create: Cobblemon Balls Overhaul, Create Cobblemon Potion y las Aviator's Goggles en un slot de Accessories.</p>
+<h2>Tambi&eacute;n compatible con</h2>
+<p>Cobblemore Library (requiere Pommel). Cobblemon: Create Industries todav&iacute;a no tiene versi&oacute;n Fabric.</p>
+<h2>Novedades de 1.1.3-beta</h2>
+<p>El port de Create Cobblestone pasa de 1.4.10 a 1.5.1: tiempo de rotura configurable para el Mechanical Generator (breakTime, desactivado por defecto), ya no crashea con un tipo de generador inv&aacute;lido y no oculta las caras de los bloques de al lado. Las opciones de generadores de deepslate se quitaron de la config; ahora solo vienen de datapacks.</p>
