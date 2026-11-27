@@ -39,7 +39,7 @@ tools/                    Scripts used for the ports (NeoForge->Fabric source he
 ./gradlew :core:build
 ```
 
-The finished mod is `core/build/libs/cobbleverse-create-reforged-1.1.2-beta.jar` (the ports are nested inside it).
+The finished mod is `core/build/libs/cobbleverse-create-reforged-1.1.3-beta.jar` (the ports are nested inside it).
 
 ## Tools
 

@@ -14,6 +14,7 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -26,6 +27,12 @@ import org.jetbrains.annotations.NotNull;
 public class MechanicalGeneratorBlock extends HorizontalKineticBlock implements IBE<MechanicalGeneratorBlockEntity> {
    public MechanicalGeneratorBlock(Properties properties) {
       super(properties);
+   }
+
+   @Override
+   protected float getDestroyProgress(BlockState state, Player player, BlockGetter level, BlockPos pos) {
+      // 1: instant, 0: never (upstream 1.4.11)
+      return 1.0F / (20.0F * Config.common().breakTime.getF());
    }
 
    public BlockState getStateForPlacement(BlockPlaceContext context) {

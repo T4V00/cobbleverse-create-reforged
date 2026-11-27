@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "createcobblestone",
-  "version": "1.4.10+fabricport",
+  "version": "1.5.1+fabricport",
   "name": "Create Cobblestone (Fabric port)",
   "description": "Adds a block generating cobblestone using SU. Unofficial local Fabric port for Create Reforged.",
   "authors": ["MrStickyPiston"],

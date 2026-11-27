@@ -14,6 +14,7 @@ public class CreateCobblestoneCommon extends ConfigBase {
    public final ConfigInt generatorStress = this.i(8, 0, "generatorStress", CreateCobblestoneCommon.Comments.generatorStress);
    public final ConfigFloat outputPerSecondPerRpm = this.f(2.5F, 0.0F, "outputPerSecondPerRpm", CreateCobblestoneCommon.Comments.outputPerSecondPerRpm);
    public final ConfigInt maxStorage = this.i(256, 1, "maxGeneratorStorage", CreateCobblestoneCommon.Comments.maxStorage);
+   public final ConfigFloat breakTime = this.f(0.0F, 0.0F, "breakTime", CreateCobblestoneCommon.Comments.breakTime);
    public final ConfigBool enableDebugLogging = this.b(false, "enableDebugLogging", CreateCobblestoneCommon.Comments.enableDebugLogging);
    public final ConfigGroup generatorsGroup = this.group(1, "generatorsEnabled", CreateCobblestoneCommon.Comments.generatorsGroup);
    public final ConfigBool cobblestoneGeneratorEnabled = this.b(
@@ -25,10 +26,6 @@ public class CreateCobblestoneCommon extends ConfigBase {
       true, "limestoneGeneratorEnabled", new String[]{CreateCobblestoneCommon.Comments.generatorEnabled}
    );
    public final ConfigBool scoriaGeneratorEnabled = this.b(true, "scoriaGeneratorEnabled", new String[]{CreateCobblestoneCommon.Comments.generatorEnabled});
-   public final ConfigBool deepslateGeneratorEnabled = this.b(true, "deepslateGeneratorEnabled", CreateCobblestoneCommon.Comments.deepslateGeneratorsEnabled);
-   public final ConfigBool cobbledDeepslateGeneratorEnabled = this.b(
-      true, "cobbledDeepslateGeneratorEnabled", CreateCobblestoneCommon.Comments.deepslateGeneratorsEnabled
-   );
 
    public String getName() {
       return "common";
@@ -47,12 +44,8 @@ public class CreateCobblestoneCommon extends ConfigBase {
          return (Boolean)Config.common().limestoneGeneratorEnabled.get();
       } else if (Objects.equals(type.getId(), "createcobblestone:generator_types/scoria.json")) {
          return (Boolean)Config.common().scoriaGeneratorEnabled.get();
-      } else if (Objects.equals(type.getId(), "createcobblestone:generator_types/deepslate.json")) {
-         return (Boolean)Config.common().deepslateGeneratorEnabled.get();
       } else {
-         return Objects.equals(type.getId(), "createcobblestone:generator_types/cobbled_deepslate.json")
-            ? (Boolean)Config.common().cobbledDeepslateGeneratorEnabled.get()
-            : true;
+         return true;
       }
    }
 
@@ -61,13 +54,11 @@ public class CreateCobblestoneCommon extends ConfigBase {
       public static String[] generatorStress = new String[]{"stress * rpm = total stress", "(Can be overridden by custom generator types)"};
       public static String[] outputPerSecondPerRpm = new String[]{"(Can be overridden by custom generator types)"};
       public static String[] maxStorage = new String[]{"(Can be overridden by custom generator types)"};
+      public static String[] breakTime = new String[]{"(Does not scale with mining tool)"};
       public static String[] enableDebugLogging = new String[]{
          "Log information that may be usefull for reporting a problem and debugging it.", "THIS WILL SPAM YOUR LOGS"
       };
       public static String[] generatorsGroup = new String[]{"Cobblestone generator types"};
       public static String generatorEnabled = "Enables the generator. When disabled, the generator is replaced with unset generators. Make a backup before doing this.";
-      public static String[] deepslateGeneratorsEnabled = new String[]{
-         generatorEnabled, "(Also requires deepslate generators datapack, https://modrinth.com/datapack/create-cobblestone-deepslate-generators)"
-      };
    }
 }

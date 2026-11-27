@@ -29,7 +29,7 @@ public class Blocks {
 
       MECHANICAL_GENERATOR_BLOCK = CreateCobblestoneNeoForge.REGISTRATE
          .<MechanicalGeneratorBlock>block("mechanical_generator", MechanicalGeneratorBlock::new)
-         .properties(p -> p.mapColor(MapColor.COLOR_BROWN))
+         .properties(p -> p.mapColor(MapColor.COLOR_BROWN).noOcclusion())
          .tag(AllBlockTags.SAFE_NBT.tag)
          .<MechanicalGeneratorBlockItem>item((block, props) -> new MechanicalGeneratorBlockItem(block, props))
          .build()

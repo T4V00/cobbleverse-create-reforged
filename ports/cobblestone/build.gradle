@@ -1,2 +1,2 @@
-version = '1.4.10+fabricport'
+version = '1.5.1+fabricport'
 base { archivesName = 'createcobblestone-fabric' }
